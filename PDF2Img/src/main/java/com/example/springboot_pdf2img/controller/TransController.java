@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -76,11 +77,19 @@ public class TransController {
         }
         return getJson();
     }
+    @GetMapping("/")
+    public String index(){
+        return getJson();
+    }
 
     private String getJson() {
+
         return null;
     }
 
+    /*
+      文件处理函数
+     */
     private void fileHandler(File sourcePath, File imgSavePath, File excelSavePath) {
         File[] files = sourcePath.listFiles();
         if (files == null) {
@@ -90,18 +99,19 @@ public class TransController {
             String fileName = file.getName();
             if (fileName.endsWith(".pdf")) {
                 pdf2Img.pdfTrans2Img(file, imgSavePath);
-            }else if (fileName.endsWith(".pptx")){
-                ppt2Img.trans2Img(file,imgSavePath);
-            }else if (fileName.endsWith(".excel")){
-                changeEndsName(file,excelSavePath);
+            } else if (fileName.endsWith(".pptx")) {
+                ppt2Img.trans2Img(file, imgSavePath);
+            } else if (fileName.endsWith(".excel")) {
+                changeEndsName(file, excelSavePath);
             }
         }
     }
+
     /*更改文件后缀名*/
-    private void changeEndsName(File file,File savePath) {
+    private void changeEndsName(File file, File savePath) {
         String oldName = file.getName();
-        String newName = oldName+".html";
-        File newFile = new File(savePath,newName);
+        String newName = oldName + ".html";
+        File newFile = new File(savePath, newName);
         if (file.renameTo(newFile)) {
             System.out.println("文件名已更改: " + oldName + " -> " + newName);
         } else {

@@ -20,7 +20,7 @@ class Pdf2ImgApplicationTests {
 
     @Test
     void contextLoads() {
-        File pdf = new File("D:\\code\\test\\document_name01\\2023-07-21\\JDBC.pdf");
+        File pdf = new File("D:\\code\\test\\document_name01\\2023-07-21\\面向服务的软件构架-研究生课程.pptx");
         File save = new File("D:\\code\\test\\source\\image");
 
         System.out.println(filePath.d1);

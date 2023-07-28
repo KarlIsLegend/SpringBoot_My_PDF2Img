@@ -7,5 +7,5 @@ import java.io.File;
  * @date 2023/7/26
  **/
 public interface PPT2Img {
-    String trans2Img(File pdfPath, File savePath);
+    void trans2Img(File ppt, File savePath);
 }

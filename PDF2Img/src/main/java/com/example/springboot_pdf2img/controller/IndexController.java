@@ -20,7 +20,7 @@ public class IndexController {
     @Autowired
     public FilePath filePath;
 
-    @GetMapping("/")
+    @GetMapping("/1")
     public String index(ModelMap modelMap){
         LocalDate date = LocalDate.now();
         modelMap.addAttribute("msg","Hi,SB是Spring Boot...哦");
