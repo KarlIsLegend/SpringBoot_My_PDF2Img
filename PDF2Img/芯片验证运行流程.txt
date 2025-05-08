@@ -1,5 +1,0 @@
-1.	使用vim **.sh 打开sh文件
-2.	修改sh文件内容，打开注释 按i编辑
-3.	保存修改后的sh文件，步骤：esc 然后 ：wq
-4.	执行命令./compile.sh 64 (编译了cpp文件)
-5.	Sudo  ./demo(可执行文件) -b **.bin -i **.jpg
